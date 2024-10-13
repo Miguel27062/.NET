@@ -1,0 +1,139 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int opcion;
+        double area = 0;
+
+        Console.WriteLine("Menú de opciones para calcular áreas de figuras geométricas:");
+        Console.WriteLine("1. Rectángulo");
+        Console.WriteLine("2. Cuadrado");
+        Console.WriteLine("3. Paralelogramo");
+        Console.WriteLine("4. Rombo");
+        Console.WriteLine("5. Trapecio");
+        Console.WriteLine("6. Triángulo");
+        Console.WriteLine("7. Triángulo equilátero");
+        Console.WriteLine("8. Triángulo rectángulo");
+        Console.WriteLine("9. Polígono regular");
+        Console.WriteLine("Elige una opción:");
+
+        opcion = Convert.ToInt32(Console.ReadLine());
+
+        switch (opcion)
+        {
+            case 1:
+                area = CalcularAreaRectangulo();
+                break;
+            case 2:
+                area = CalcularAreaCuadrado();
+                break;
+            case 3:
+                area = CalcularAreaParalelogramo();
+                break;
+            case 4:
+                area = CalcularAreaRombo();
+                break;
+            case 5:
+                area = CalcularAreaTrapecio();
+                break;
+            case 6:
+                area = CalcularAreaTriangulo();
+                break;
+            case 7:
+                area = CalcularAreaTrianguloEquilatero();
+                break;
+            case 8:
+                area = CalcularAreaTrianguloRectangulo();
+                break;
+            case 9:
+                area = CalcularAreaPoligonoRegular();
+                break;
+            default:
+                Console.WriteLine("Opción no válida.");
+                break;
+        }
+
+        Console.WriteLine($"El área calculada es: {area}");
+    }
+
+    static double CalcularAreaRectangulo()
+    {
+        Console.WriteLine("Introduce el valor de la base (a):");
+        double a = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor de la altura (b):");
+        double b = Convert.ToDouble(Console.ReadLine());
+        return a * b;
+    }
+
+    static double CalcularAreaCuadrado()
+    {
+        Console.WriteLine("Introduce el valor del lado (a):");
+        double a = Convert.ToDouble(Console.ReadLine());
+        return a * a;
+    }
+
+    static double CalcularAreaParalelogramo()
+    {
+        Console.WriteLine("Introduce el valor de la base (b):");
+        double b = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor de la altura (h):");
+        double h = Convert.ToDouble(Console.ReadLine());
+        return b * h;
+    }
+
+    static double CalcularAreaRombo()
+    {
+        Console.WriteLine("Introduce el valor de la diagonal mayor (AC):");
+        double AC = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor de la diagonal menor (BD):");
+        double BD = Convert.ToDouble(Console.ReadLine());
+        return (AC * BD) / 2;
+    }
+
+    static double CalcularAreaTrapecio()
+    {
+        Console.WriteLine("Introduce el valor de la base mayor (a):");
+        double a = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor de la base menor (b):");
+        double b = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor de la altura (h):");
+        double h = Convert.ToDouble(Console.ReadLine());
+        return ((a + b) / 2) * h;
+    }
+
+    static double CalcularAreaTriangulo()
+    {
+        Console.WriteLine("Introduce el valor de la base (a):");
+        double a = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor de la altura (h):");
+        double h = Convert.ToDouble(Console.ReadLine());
+        return (a * h) / 2;
+    }
+
+    static double CalcularAreaTrianguloEquilatero()
+    {
+        Console.WriteLine("Introduce el valor del lado (a):");
+        double a = Convert.ToDouble(Console.ReadLine());
+        return (Math.Pow(a, 2) * Math.Sqrt(3)) / 4;
+    }
+
+    static double CalcularAreaTrianguloRectangulo()
+    {
+        Console.WriteLine("Introduce el valor de uno de los catetos (a):");
+        double a = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor del otro cateto (c):");
+        double c = Convert.ToDouble(Console.ReadLine());
+        return (a * c) / 2;
+    }
+
+    static double CalcularAreaPoligonoRegular()
+    {
+        Console.WriteLine("Introduce el valor del perímetro (P):");
+        double P = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Introduce el valor del apotema (ap):");
+        double ap = Convert.ToDouble(Console.ReadLine());
+        return (P * ap) / 2;
+    }
+}
