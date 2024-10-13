@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double sumaNotas = 0;
+        const int cantidadNotas = 5;
+
+        for (int i = 1; i <= cantidadNotas; i++)
+        {
+            double nota;
+            Console.Write($"Por favor, ingresa la nota del estudiante {i} (0.0 a 5.0): ");
+
+          
+            while (!double.TryParse(Console.ReadLine(), out nota) || nota < 0.0 || nota > 5.0)
+            {
+                Console.WriteLine("Por favor, ingresa una nota válida entre 0.0 y 5.0.");
+            }
+
+            sumaNotas += nota; 
+        }
+
+        double promedio = sumaNotas / cantidadNotas;
+
+    
+        Console.WriteLine($"El promedio de las notas del estudiante es de: {promedio:F2}"); 
+
+        if (promedio >= 3.0)
+        {
+            Console.WriteLine("Aprobo la asignatura.");
+        }
+        else
+        {
+            Console.WriteLine("No aprobó la asignatura.");
+        }
+    }
+}
