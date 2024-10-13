@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Por favor ingrese su nombre
+        Console.Write("Por favor, ingrese su nombre: ");
+        string nombre = Console.ReadLine();
+
+        // Por favor ingrese su edad 
+        Console.Write("Por favor, ingrese su edad: ");
+        int edad;
+
+ 
+        bool esNumero = int.TryParse(Console.ReadLine(), out edad);
+
+        if (!esNumero || edad < 0 || edad > 100)
+        {
+            Console.WriteLine("Por favor, ingresar una edad válida.");
+        }
+        else
+        {
+          
+            if (edad >= 18)
+            {
+                Console.WriteLine($"Hola {nombre}, usted es mayor de edad.");
+            }
+            else
+            {
+                Console.WriteLine($"Hola {nombre}, usted es menor de edad.");
+            }
+        }
+    }
+}
