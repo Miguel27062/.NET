@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Por favor, ingresar el primer numero: ");
+        double numero1;
+
+        while (!double.TryParse(Console.ReadLine(), out numero1))
+        {
+            Console.WriteLine("Por favor, ingresa un número correcto.");
+        }
+        Console.Write("Por favor, ingresar el primer numero: ");
+        double numero2;
+
+        while (!double.TryParse(Console.ReadLine(), out numero2))
+        {
+            Console.WriteLine("Por favor, ingresa un numero correcto.");
+        }
+
+     
+        if (numero1 > numero2)
+        {
+            Console.WriteLine($"El número mayor es: {numero1}");
+            Console.WriteLine($"El número menor es: {numero2}");
+        }
+        else if (numero1 < numero2)
+        {
+            Console.WriteLine($"El número mayor es: {numero2}");
+            Console.WriteLine($"El número menor es: {numero1}");
+        }
+        else
+        {
+            Console.WriteLine("Los números ingresados son iguales.");
+        }
+    }
+}
