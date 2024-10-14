@@ -1,0 +1,56 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double peso, estatura, imc;
+
+    
+        Console.WriteLine("Introduce el peso en kg:");
+        peso = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Introduce la estatura en metros:");
+        estatura = Convert.ToDouble(Console.ReadLine());
+
+       
+        imc = peso / (estatura * estatura);
+
+    
+        Console.WriteLine($"Tu IMC es: {imc:F2}");
+
+    
+        if (imc < 18.5)
+        {
+            Console.WriteLine("Estado: Bajo peso");
+        }
+        else if (imc >= 18.5 && imc <= 24.9)
+        {
+            Console.WriteLine("Estado: Normal");
+        }
+        else if (imc >= 25 && imc <= 29.9)
+        {
+            Console.WriteLine("Estado: Sobrepeso");
+        }
+        else if (imc >= 30 && imc <= 34.9)
+        {
+            Console.WriteLine("Estado: Obesidad I");
+        }
+        else if (imc >= 35 && imc <= 39.9)
+        {
+            Console.WriteLine("Estado: Obesidad II");
+        }
+        else if (imc >= 40 && imc <= 49.9)
+        {
+            Console.WriteLine("Estado: Obesidad III");
+        }
+        else if (imc >= 50)
+        {
+            Console.WriteLine("Estado: Obesidad IV");
+        }
+        else
+        {
+            Console.WriteLine("Error en los datos ingresados.");
+        }
+    }
+}
