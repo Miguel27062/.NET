@@ -1,0 +1,45 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        Console.Write("Ingrese el número de términos para la serie de Fibonacci: ");
+        int n = int.Parse(Console.ReadLine());
+
+       
+        int primero = 0, segundo = 1, siguiente, suma = 0;
+
+        
+        Console.WriteLine("Los primeros ingresados" + n + " términos de la serie de Fibonacci son:");
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (i == 1)
+            {
+                Console.WriteLine(primero);
+                suma += primero;
+            }
+            else if (i == 2)
+            {
+                Console.WriteLine(segundo);
+                suma += segundo;
+            }
+            else
+            {
+                siguiente = primero + segundo;
+                Console.WriteLine(siguiente);
+                suma += siguiente;
+                primero = segundo;
+                segundo = siguiente;
+            }
+        }
+
+        
+        Console.WriteLine("La suma de los primeros es de " + n + " términos de la serie de Fibonacci es: " + suma);
+
+   
+        Console.ReadKey();
+    }
+}
