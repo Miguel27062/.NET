@@ -1,1 +1,36 @@
 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        
+        Console.Write("Por favor, ingresa el total a pagar: ");
+        double montoCuenta;
+
+       
+        while (!double.TryParse(Console.ReadLine(), out montoCuenta) || montoCuenta < 0)
+        {
+            Console.WriteLine("Por favor, un total correcto.");
+        }
+
+       
+        if (montoCuenta < 150000)
+        {
+            Console.WriteLine("Método de pago: Efectivo.");
+        }
+        else if (montoCuenta >= 150000 && montoCuenta <= 300000)
+        {
+            Console.WriteLine("Método de pago: Billetera dijital.");
+        }
+        else if (montoCuenta > 300000 && montoCuenta <= 600000)
+        {
+            Console.WriteLine("Método de pago: Tarjeta de débito.");
+        }
+        else
+        {
+            Console.WriteLine("Método de pago: Tarjeta de crédito.");
+        }
+    }
+}
