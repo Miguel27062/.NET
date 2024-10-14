@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+ 
+        Console.Write("Por favor, ingresa tu edad en años: ");
+        int edad;
+
+   
+        while (!int.TryParse(Console.ReadLine(), out edad) || edad < 0)
+        {
+            Console.WriteLine("Por favor, ingresa una edad válida.");
+        }
+
+      
+        Console.Write("Por favor, ingresa tu género (1 para femenino, 2 para masculino): ");
+        int genero;
+
+        
+        while (!int.TryParse(Console.ReadLine(), out genero) || (genero != 1 && genero != 2))
+        {
+            Console.WriteLine("Por favor, ingresa un género válido (1 o 2).");
+        }
+
+    
+        double pulsaciones;
+
+        if (genero == 1) 
+        {
+            pulsaciones = (220 - edad) / 10.0;
+        }
+        else 
+        {
+            pulsaciones = (210 - edad) / 10.0;
+        }
+
+    
+        Console.WriteLine($"El número de pulsaciones que debes tener por cada 10 segundos de ejercicio aeróbico es: {pulsaciones:F2}");
+    }
+}
