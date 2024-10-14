@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+ 
+        Console.WriteLine("Seleccione el tamaño de la pizza por favor:");
+        Console.WriteLine("1. Pequeña - $8,000");
+        Console.WriteLine("2. Mediana - $12,000");
+        Console.WriteLine("3. Grande - $15,000");
+
+        Console.Write("Ingrese el número del tamaño de pizza que desea comprar: ");
+        int opcion;
+
+        while (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 3)
+        {
+            Console.WriteLine("Por favor, ingresa una opción válida (1, 2 o 3).");
+        }
+
+      
+        double precioPizza;
+
+        switch (opcion)
+        {
+            case 1:
+                precioPizza = 8000; 
+                break;
+            case 2:
+                precioPizza = 12000; 
+                break;
+            case 3:
+                precioPizza = 15000; 
+                break;
+            default:
+                precioPizza = 0; 
+                break;
+        }
+
+      
+        Console.WriteLine($"El precio de la pizza seleccionada es de  : ${precioPizza:F2} pesos");
+    }
+}
