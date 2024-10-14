@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = 4; 
+        int num = 1; 
+
+     
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = i; j < n; j++)
+            {
+                Console.Write(" ");
+            }
+
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(num + " ");
+                num++; 
+            }
+
+            Console.WriteLine(); 
+        }
+
+        
+        Console.ReadKey();
+    }
+}
