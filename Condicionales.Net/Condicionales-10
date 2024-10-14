@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+      
+        Console.Write("Por favor, ingresa el número de llantas que deseas comprar: ");
+        int cantidadLlantas;
+
+        
+        while (!int.TryParse(Console.ReadLine(), out cantidadLlantas) || cantidadLlantas < 0)
+        {
+            Console.WriteLine("por favor ingrese la cantidad correctas de llantas.");
+        }
+
+
+        double precioUnitario;
+
+        if (cantidadLlantas < 6)
+        {
+            precioUnitario = 240000;
+        }
+        else if (cantidadLlantas >= 6 && cantidadLlantas <= 7)
+        {
+            precioUnitario = 221000;
+        }
+        else 
+        {
+            precioUnitario = 180000;
+        }
+
+  
+        double totalAPagar = cantidadLlantas * precioUnitario;
+
+
+        Console.WriteLine($"El valor total a cancelar {cantidadLlantas} llantas es de: ${totalAPagar:F2}");
+    }
+}
