@@ -1,0 +1,41 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        Console.Write("Ingrese la cantidad de artículos que desea comprar: ");
+        int cantidadArticulos;
+
+        while (!int.TryParse(Console.ReadLine(), out cantidadArticulos) || cantidadArticulos < 0)
+        {
+            Console.WriteLine("Por favor, ingrese una cantidad válida de artículos.");
+        }
+
+        Console.Write("Ingrese el precio unitario original del artículo: ");
+        double precioUnitario;
+
+        while (!double.TryParse(Console.ReadLine(), out precioUnitario) || precioUnitario < 0)
+        {
+            Console.WriteLine("Por favor, ingrese un precio unitario válido.");
+        }
+
+        double descuento = 0;
+
+        if (cantidadArticulos > 5 && cantidadArticulos < 10)
+        {
+            descuento = 0.05; 
+        }
+        else if (cantidadArticulos >= 10)
+        {
+            descuento = 0.08; 
+        }
+
+       
+        double precioFinal = precioUnitario * (1 - descuento);
+        double totalAPagar = cantidadArticulos * precioFinal;
+
+        Console.WriteLine($"El total a pagar por {cantidadArticulos} artículos es: ${totalAPagar:F2}");
+    }
+}
