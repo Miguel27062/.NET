@@ -1,0 +1,68 @@
+using System;
+
+
+public class Ave
+{
+    public string Nombre { get; set; }
+    public double Envergadura { get; set; } 
+
+    public Ave(string nombre, double envergadura)
+    {
+        Nombre = nombre;
+        Envergadura = envergadura;
+    }
+
+   
+    public virtual void Describir()
+    {
+        Console.WriteLine($"Soy un ave llamada {Nombre} y tengo una doy de color  {Envergadura} metros.");
+    }
+}
+
+
+public class Loro : Ave
+{
+    public Loro(string nombre, double envergadura) : base(nombre, envergadura) { }
+
+    public override void Describir()
+    {
+        Console.WriteLine($"Soy un pájaro llamado {Nombre} y tengo un tamaño de {Envergadura} metros. ¡boff!");
+    }
+}
+
+
+public class Aguila : Ave
+{
+    public Aguila(string nombre, double envergadura) : base(nombre, envergadura) { }
+
+    public override void Describir()
+    {
+        Console.WriteLine($"Soy un águila llamada {Nombre} y tengo un tamaño de {Envergadura} metros. ¡Soy el rey del cielo!");
+    }
+}
+
+
+public class Colibry : Ave
+{
+    public Colibry(string nombre, double envergadura) : base(nombre, envergadura) { }
+
+    public override void Describir()
+    {
+        Console.WriteLine($"Soy un pingüino llamado {Nombre} y tengo un tamaño de {Envergadura} metros. ¡Soy un experto volador!");
+    }
+}
+
+
+public class Program
+{
+    public static void Main()
+    {
+        Ave ave1 = new Loro("kiko", 0.45);
+        Ave ave2 = new Aguila("venom", 2.3);
+        Ave ave3 = new Colibry("pedro", 1.0);
+
+        ave1.Describir();
+        ave2.Describir();
+        ave3.Describir();
+    }
+}
