@@ -1,0 +1,45 @@
+using System;
+
+public class PowerCalculator
+{
+    
+    public double PowRecursive(double x, int n)
+    {
+        if (n == 0) return 1;
+        if (n < 0) return 1 / PowRecursive(x, -n); 
+        return x * PowRecursive(x, n - 1);
+    }
+
+ 
+    public double PowIterative(double x, int n)
+    {
+        if (n == 0) return 1; 
+        double result = 1;
+        int exponent = Math.Abs(n);
+
+        for (int i = 0; i < exponent; i++)
+        {
+            result *= x;
+        }
+
+        return n < 0 ? 1 / result : result; 
+    }
+}
+
+
+public class Program
+{
+    public static void Main()
+    {
+        PowerCalculator calculator = new PowerCalculator();
+
+        double x = 8.0;
+        int n = 30;
+
+        double resultadoRecursivo = calculator.PowRecursive(x, n);
+        double resultadoIterativo = calculator.PowIterative(x, n);
+
+        Console.WriteLine($"PowRecursive({x}, {n}) = {resultadoRecursivo}");
+        Console.WriteLine($"PowIterative({x}, {n}) = {resultadoIterativo}");
+    }
+}
