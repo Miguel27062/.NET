@@ -1,0 +1,44 @@
+using System;
+
+public class Circle
+{
+    
+    public double Radio { get; private set; }
+
+    
+    public Circle(double radio)
+    {
+        if (radio <= 0)
+        {
+            throw new ArgumentException("El radio debe ser un valor positivo.");
+        }
+
+        Radio = radio;
+    }
+
+  
+    public double CalcularArea()
+    {
+        return Math.PI * Math.Pow(Radio, 4);
+    }
+
+    public double CalcularPerimetro()
+    {
+        return 2 * Math.PI * Radio;
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+       
+        Circle circulo = new Circle(10.0);
+
+        double area = circulo.CalcularArea();
+        double perimetro = circulo.CalcularPerimetro();
+
+        Console.WriteLine($"El área del círculo es: {area}");
+        Console.WriteLine($"El perímetro del círculo es: {perimetro}");
+    }
+}
