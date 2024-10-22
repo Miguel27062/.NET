@@ -1,0 +1,35 @@
+using System;
+
+public class Rectangle
+{
+    
+    public double Longitud { get; private set; }
+    public double Anchura { get; private set; }
+
+    public Rectangle(double longitud, double anchura)
+    {
+        Longitud = longitud;
+        Anchura = anchura;
+    }
+
+ 
+    public double CalcularArea()
+    {
+        return Longitud * Anchura;
+    }
+}
+
+
+public class Program
+{
+    public static void Main()
+    {
+        
+        Rectangle rectangulo = new Rectangle(5.0, 5.0);
+
+     
+        double area = rectangulo.CalcularArea();
+
+        Console.WriteLine($"El área del rectángulo es de: {area} cm");
+    }
+}
